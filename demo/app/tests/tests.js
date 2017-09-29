@@ -1,4 +1,4 @@
-var AdalContext = require("nativescript-adal").AdalContext;
+var AdalContext = require("@navara/nativescript-adal").AdalContext;
 var adalContext = new AdalContext(
   "https://login.microsoftonline.com/contoso.onmicrosoft.com",
   "00000000-0000-0000-0000-000000000000",
