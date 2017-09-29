@@ -19,7 +19,7 @@ tns plugin add @navara/nativescript-adal
 Import the AdalContext class in application in, for example, an AuthenticationService.
 
 ```javascript
-import { AdalContext } from 'nativescript-adal';
+import { AdalContext } from '@navara/nativescript-adal';
 ```
 
 Set your Azure AD constants (or import them from a configuration file)
