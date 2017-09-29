@@ -14,49 +14,43 @@ Your application requires to be registered inside your Azure Active Directory (A
 tns plugin add @navara/nativescript-adal
 ```
 
-## Usage 
+## Usage (Angular example)
 
-Import the AdalContext class in application in, for example, an AuthenticationService.
+Import the AdalContext class in application in, for example, an 'AdalService' and initialize it.
 
 ```javascript
+import { Injectable } from '@angular/core';
 import { AdalContext } from '@navara/nativescript-adal';
-```
 
-Set your Azure AD constants (or import them from a configuration file)
-
-```javascript
 const authority: string = 'https://login.microsoftonline.com/{your-tenant-id}';
 const clientId: string = '{your-application-id}';
 const resourceId: string = '00000002-0000-0000-c000-000000000000';
-```
 
-Initialize the AdalContext
+@Injectable()
+export class AdalService {
 
-```javascript
-this.adalContext = new AdalContext(authority, clientId, resourceId);
-```
+  public adalContext: AdalContext;
 
-Then, expose the methods using your own login and token methods, for example:
-
-```javascript
-login(): Promise<any> {
-  return new Promise<any>((resolve, reject) => {
-    this.adalContext.login().then((result) => {
-      resolve(result);
-    }).catch(error => {
-      reject(error);
-    });
-  });
-}
-
-getToken(): Promise<string> {
-  return new Promise<string>((resolve) => {
-    resolve(this.adalContext.getToken());
-  });
+  constructor() {
+    this.adalContext = new AdalContext(authority, clientId, resourceId);
+  }
 }
 ```
 
-...and consume these in your application!
+...and consume this service in your application!
+
+```javascript
+export class AppComponent {
+
+  constructor(private adalService: AdalService) { }
+
+  public login() {
+    this.adalService.adalContext.login().then((result) => {
+      console.log('Success!');
+    })
+  }
+}
+```
 
 ## Known issues on iOS
 
