@@ -1,6 +1,6 @@
 {
     "name": "@navara/nativescript-adal",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A NativeScript plugin for Microsoft's Active Directory Authentication Library.",
     "author": "Yves Candel",
     "repository": {
