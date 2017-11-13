@@ -1,4 +1,8 @@
-///<reference path="./adal-library.ios.d.ts" />
+declare var ADAuthenticationContext: any;
+declare var ADAuthenticationResult: any;
+declare var ADAuthenticationSettings: any;
+declare var interop: any;
+declare var NSURL: any;
 
 export class AdalContext {
 
@@ -9,6 +13,7 @@ export class AdalContext {
   private context: ADAuthenticationContext;
   private redirectUri: string = 'urn:ietf:wg:oauth:2.0:oob';
   private resourceId: string;
+  private userId: string;
 
   // Authority is in the form of https://login.microsoftonline.com/yourtenant.onmicrosoft.com
   constructor(authority: string, clientId: string, resourceId: string) {
@@ -29,6 +34,7 @@ export class AdalContext {
         NSURL.URLWithString(this.redirectUri),
         (result: ADAuthenticationResult) => {
           this.authResult = result;
+          this.userId = result.tokenCacheItem.userInformation.userObjectId;
           if (result.error) {
             reject(result.error);
           } else {
@@ -40,8 +46,8 @@ export class AdalContext {
 
   public getToken(): Promise<string> {
     return new Promise<string>((resolve) => {
-      this.context.acquireTokenWithResourceClientIdRedirectUriCompletionBlock(
-        this.clientId,
+      this.context.acquireTokenSilentWithResourceClientIdRedirectUriCompletionBlock(
+        this.resourceId,
         this.clientId,
         NSURL.URLWithString(this.redirectUri),
         (result: ADAuthenticationResult) => {

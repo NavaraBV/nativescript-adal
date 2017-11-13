@@ -29,6 +29,8 @@ pack() {
     echo 'Building /src...'
     cd "$TO_SOURCE_DIR"
     node_modules/.bin/tsc
+    node_modules/.bin/rimraf adal.android.ts
+    node_modules/.bin/rimraf adal.ios.ts
     cd ..
 
     echo 'Creating package...'
