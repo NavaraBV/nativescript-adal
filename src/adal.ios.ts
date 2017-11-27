@@ -47,7 +47,7 @@ export class AdalContext {
   public getToken(): Promise<string> {
     return new Promise<string>((resolve) => {
       this.context.acquireTokenSilentWithResourceClientIdRedirectUriCompletionBlock(
-        this.resourceId,
+        this.clientId,
         this.clientId,
         NSURL.URLWithString(this.redirectUri),
         (result: ADAuthenticationResult) => {

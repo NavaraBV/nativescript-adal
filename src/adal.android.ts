@@ -53,7 +53,7 @@ export class AdalContext {
   public getToken(): Promise<string> {
     return new Promise<string>((resolve: any, reject) => {
       this.context.acquireTokenSilentAsync(
-        this.resourceId,
+        this.clientId,
         this.clientId,
         this.userId,
         new com.microsoft.aad.adal.AuthenticationCallback({
