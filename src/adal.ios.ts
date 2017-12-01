@@ -34,10 +34,10 @@ export class AdalContext {
         NSURL.URLWithString(this.redirectUri),
         (result: ADAuthenticationResult) => {
           this.authResult = result;
-          this.userId = result.tokenCacheItem.userInformation.userObjectId;
           if (result.error) {
             reject(result.error);
           } else {
+            this.userId = result.tokenCacheItem.userInformation.userObjectId;
             resolve(result.accessToken);
           }
         });
