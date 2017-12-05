@@ -1,6 +1,17 @@
 # NativeScript Active Directory Authentication Library Plugin
 
-[![Build Status](https://travis-ci.org/NavaraBV/nativescript-adal.svg?branch=master)](https://travis-ci.org/NavaraBV/nativescript-adal)
+[![Build Status][build-status]][build-url]
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][npm-url]
+[![BCH compliance][bch-url-repo]][bch-url]
+
+[build-status]:https://travis-ci.org/NavaraBV/nativescript-adal.svg?branch=master
+[build-url]:https://travis-ci.org/NavaraBV/nativescript-adal
+[bch-url-repo]:https://bettercodehub.com/edge/badge/NavaraBV/nativescript-adal?branch=master
+[bch-url]:https://bettercodehub.com/
+[npm-image]:https://img.shields.io/npm/v/@navara/nativescript-adal.svg
+[npm-url]:https://npmjs.org/package/@navara/nativescript-adal
+[downloads-image]:http://img.shields.io/npm/dm/@navara/nativescript-adal.svg
 
 This plugin allows you to quickly add Azure Active Directory Authentication to your NativeScript app
 
