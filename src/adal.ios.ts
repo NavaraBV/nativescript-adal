@@ -27,6 +27,40 @@ export class AdalContext {
 
   public login(): Promise<string> {
     this.authError = new interop.Reference();
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
     return new Promise<string>((resolve, reject) => {
       this.context.acquireTokenWithResourceClientIdRedirectUriCompletionBlock(
         this.resourceId,
