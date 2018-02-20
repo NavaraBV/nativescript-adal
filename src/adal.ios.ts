@@ -1,6 +1,5 @@
-declare var ADAuthenticationContext: any;
-declare var ADAuthenticationResult: any;
-declare var ADAuthenticationSettings: any;
+/// <reference path="./platforms/ios/typings/adal-library.ios.d.ts" />
+
 declare var interop: any;
 declare var NSURL: any;
 

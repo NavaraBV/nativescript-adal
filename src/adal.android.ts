@@ -1,3 +1,5 @@
+/// <reference path="./platforms/android/typings/adal-library.android.d.ts" />
+
 import * as application from 'tns-core-modules/application';
 import * as utils from 'tns-core-modules/utils/utils';
 
