@@ -35,7 +35,7 @@
     "tns-platform-declarations": "3.2.0",
     "tslint": "5.7.0",
     "typescript": "2.4.2",
-    "webpack": "3.6.0",
+    "webpack": "5.94.0",
     "webpack-bundle-analyzer": "2.9.0",
     "webpack-sources": "1.0.1",
     "nativescript-worker-loader": "~0.8.1"
